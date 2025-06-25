@@ -45,13 +45,7 @@ if uploaded_file:
 
     df.columns = df.columns.str.strip()
     df = df.loc[:, ~df.columns.duplicated()]
-    # اختيار الإدارة من عمود "الدائرة"
 
-    if "الدائرة" in df.columns:
-        selected_dept = st.selectbox("اختاري الإدارة:", sorted(df["الدائرة"].dropna().unique()))
-        df = df[df["الدائرة"] == selected_dept]
-    else:
-        st.warning(" لا يوجد عمود 'الدائرة' في هذا الشيت.")
 
     from datetime import datetime
     def calculate_age(birthdate):
